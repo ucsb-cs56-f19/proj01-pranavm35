@@ -1,6 +1,6 @@
 Documentation: https://ucsb-cs56-f19.github.io/lab07-pranavm35/
 
-Heroku: cs56-f19-lab07-pranavm35.herokuapp.com
+Heroku: https://cs56-f19-lab07-pranavm35.herokuapp.com
 
 Repo: https://github.com/ucsb-cs56-f19/lab07-pranavm35
 
