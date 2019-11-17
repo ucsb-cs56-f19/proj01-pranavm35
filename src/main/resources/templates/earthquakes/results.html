@@ -44,21 +44,39 @@
 
     <table>
       <thead>
-          <tr>
-              <th>Type</th>
-              <th>Url</th>
-              <th>Count</th>
-          </tr>
+        <tr>
+          <th>Type</th>
+          <th>Url</th>
+          <th>Count</th>
+        </tr>
       </thead>
       <tbody>
-          <tr>
-              <td th:text="${featureCollection.type}"></td>
-              <td th:text="${featureCollection.metadata.url}"></td>
-              <td th:text="${featureCollection.metadata.count}"></td>
+        <tr>
+          <td th:text="${featureCollection.type}"></td>
+          <td th:text="${featureCollection.metadata.url}"></td>
+          <td th:text="${featureCollection.metadata.count}"></td>
 
-          </tr>
+        </tr>
       </tbody>
-  </table>
+    </table>
+
+    <h3>Earthquakes</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>place</th>
+          <th>mag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="f: ${featureCollection.features}">
+          <td th:text="${f.id}"></td>
+          <td th:text="${f.properties.place}"></td>
+          <td th:text="${f.properties.mag}"></td>
+        </tr>
+      </tbody>
+    </table>
 
     <div th:replace="bootstrap/bootstrap_footer.html"></div>
   </div>
