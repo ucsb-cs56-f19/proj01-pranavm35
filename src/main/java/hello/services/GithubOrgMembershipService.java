@@ -1,4 +1,4 @@
-package hello;
+package hello.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +18,8 @@ import com.jcabi.github.User;
 import com.jcabi.github.wire.RetryCarefulWire;
 import com.jcabi.http.Request;
 import com.jcabi.http.response.JsonResponse;
+
+import hello.services.MembershipService;
 
 /**
  * Service object that wraps the UCSB Academic Curriculum API
