@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.Map;
 import java.util.HashMap;
 import hello.services.EarthquakeQueryService;
-import hello.EqSearch;
+import hello.searches.EqSearch;
 
 import com.nimbusds.oauth2.sdk.client.ClientReadRequest;
 
