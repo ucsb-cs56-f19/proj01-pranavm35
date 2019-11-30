@@ -1,4 +1,4 @@
-package hello.geojson;
+package earthquakes.geojson;
 
 import java.util.List;
 

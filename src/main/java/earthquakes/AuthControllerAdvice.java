@@ -1,4 +1,4 @@
-package hello;
+package earthquakes;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,9 +6,10 @@ import org.springframework.security.oauth2.client.authentication.OAuth2Authentic
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
-import hello.repositories.UserRepository;
-import hello.entities.AppUser;
+import earthquakes.repositories.UserRepository;
+import earthquakes.entities.AppUser;
 import java.util.List;
+import earthquakes.services.MembershipService;
 
 @ControllerAdvice
 public class AuthControllerAdvice {

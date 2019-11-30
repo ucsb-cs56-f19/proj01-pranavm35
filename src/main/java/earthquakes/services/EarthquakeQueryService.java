@@ -1,4 +1,4 @@
-package hello;
+package earthquakes.services;
 
 import java.util.Arrays;
 

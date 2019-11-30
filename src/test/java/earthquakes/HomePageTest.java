@@ -1,4 +1,4 @@
-package hello;
+package earthquakes;
 
 // import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -19,8 +19,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.xpath;
 
+import earthquakes.controllers.HomeController;
+
 @RunWith(SpringRunner.class)
-@WebMvcTest(WebController.class)
+@WebMvcTest(HomeController.class)
 public class HomePageTest {
 
     @Autowired
