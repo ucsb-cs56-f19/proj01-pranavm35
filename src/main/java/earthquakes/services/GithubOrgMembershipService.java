@@ -1,4 +1,4 @@
-package hello.services;
+package earthquakes.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +19,7 @@ import com.jcabi.github.wire.RetryCarefulWire;
 import com.jcabi.http.Request;
 import com.jcabi.http.response.JsonResponse;
 
-import hello.services.MembershipService;
+import earthquakes.services.MembershipService;
 
 /**
  * Service object that wraps the UCSB Academic Curriculum API

@@ -1,4 +1,4 @@
-package hello;
+package earthquakes;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -20,7 +20,7 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.junit.Before;
 
-import hello.controllers.EarthquakesController;
+import earthquakes.controllers.EarthquakesController;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.authentication;
 
