@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"earthquakes","l":"BootstrapLiterals"},{"p":"earthquakes","l":"EarthquakeSearchTest"},{"p":"earthquakes","l":"HomePageTest"},{"p":"earthquakes","l":"OAuthUtils"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"earthquakes","l":"BootstrapLiterals"},{"p":"earthquakes","l":"EarthquakeSearchTest"},{"p":"earthquakes","l":"HomePageTest"},{"p":"earthquakes","l":"LocationSearchTest"},{"p":"earthquakes","l":"OAuthUtils"}]
