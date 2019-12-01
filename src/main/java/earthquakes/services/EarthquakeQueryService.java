@@ -30,7 +30,7 @@ public class EarthquakeQueryService {
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<String> entity = new HttpEntity<>("body", headers);
+        HttpEntity<String> entity = new HttpEntity("body", headers);
 
         String uri = "https://earthquake.usgs.gov/fdsnws/event/1/query";
         double ucsbLat = 34.4140;
