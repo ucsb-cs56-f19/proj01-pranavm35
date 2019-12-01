@@ -1,10 +1,10 @@
-Documentation: https://ucsb-cs56-f19.github.io/lab07-pranavm35/
+Documentation: https://ucsb-cs56-f19.github.io/proj01-pranavm35/
 
-Heroku: https://cs56-f19-lab07-pranavm35.herokuapp.com
+Heroku: https://cs56-f19-proj01-pranavm35.herokuapp.com/
 
-Repo: https://github.com/ucsb-cs56-f19/lab07-pranavm35
+Repo: https://github.com/ucsb-cs56-f19/proj01-pranavm35
 
-Travis-CI: https://travis-ci.org/ucsb-cs56-f19/lab07-pranavm35
+Travis-CI: https://travis-ci.org/ucsb-cs56-f19/proj01-pranavm35
 
 A simple Spring Boot webapp using:
 * Thymeleaf templating
