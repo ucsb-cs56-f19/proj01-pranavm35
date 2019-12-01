@@ -19,11 +19,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
-public class EarthquakeQueryService {
+public class LocationQueryService {
 
-    private Logger logger = LoggerFactory.getLogger(EarthquakeQueryService.class);
+    private Logger logger = LoggerFactory.getLogger(LocationQueryService.class);
 
-    public String getJSON(int distance, int minmag) {
+    public String getJSON(String location) {
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();
@@ -32,13 +32,9 @@ public class EarthquakeQueryService {
 
         HttpEntity<String> entity = new HttpEntity("body", headers);
 
-        String uri = "https://earthquake.usgs.gov/fdsnws/event/1/query";
-        double ucsbLat = 34.4140;
-        double ucsbLong = -119.8489;
-        String params = String.format("?format=geojson&minmagnitude=%d&maxradiuskm=%d&latitude=%f&longitude=%f",
-           minmag,distance,ucsbLat,ucsbLong);
+        String uri = "https://nominatim.openstreetmap.org/search/"+location+"?format=json";
 
-        String url = uri + params;
+        String url = uri ;
         logger.info("url=" + url);
 
         String retVal="";
@@ -46,6 +42,7 @@ public class EarthquakeQueryService {
             ResponseEntity<String> re = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
              MediaType contentType = re.getHeaders().getContentType();
             HttpStatus statusCode = re.getStatusCode();
+            System.out.println("body: "+ re.getHeaders().getContentType());
             retVal = re.getBody();
         } catch (HttpClientErrorException e) {
             retVal = "{\"error\": \"401: Unauthorized\"}";
