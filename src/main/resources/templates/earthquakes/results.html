@@ -12,38 +12,27 @@
 
     <h1>Earthquake Search Results</h1>
 
-    <h2> Results</h2>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td th:text="${featureCollection.type}"></td>
-        </tr>
-      </tbody>
-    </table>
-
     <table class = "table">
       <thead>
         <tr>
           <th>Title</th>
-          <th>Url</th>
           <th>Count</th>
           <th>Distance (km)</th>
           <th>Minimum Magnitude</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Location</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><a th:href="${featureCollection.metadata.url}" th:text="${featureCollection.metadata.title}"></a></td>
-          <td th:text="${featureCollection.metadata.url}"></td>
+          <td th:text="${featureCollection.metadata.title}"></td>
           <td th:text="${featureCollection.metadata.count}"></td>
           <td th:text="${eqSearch.distance}"></td>
           <td th:text="${eqSearch.minmag}"></td>
+          <td th:text="${eqSearch.lat}"></td>
+          <td th:text="${eqSearch.lon}"></td>
+          <td th:text="${eqSearch.location}"></td>
         </tr>
       </tbody>
     </table>
@@ -52,7 +41,6 @@
     <table class="table">
       <thead>
         <tr>
-          <th>title</th>
           <th>id</th>
           <th>place</th>
           <th>mag</th>
@@ -60,7 +48,6 @@
       </thead>
       <tbody>
         <tr th:each="f: ${featureCollection.features}">
-          <td th:text="${f.properties.title}"></td>
           <td><a th:href="${f.properties.url}" th:text="${f.id}"></a></td>
           <td th:text="${f.properties.place}"></td>
           <td th:text="${f.properties.mag}"></td>
