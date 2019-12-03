@@ -17,6 +17,11 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+<<<<<<< Updated upstream
+=======
+
+import earthquakes.controllers.LocationsController;
+>>>>>>> Stashed changes
 
 import earthquakes.controllers.LocationsController;
 import earthquakes.repositories.LocationRepository;
