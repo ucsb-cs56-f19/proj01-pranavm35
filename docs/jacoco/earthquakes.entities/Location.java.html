@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Location.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">lab07</a> &gt; <a href="index.source.html" class="el_package">earthquakes.entities</a> &gt; <span class="el_source">Location.java</span></div><h1>Location.java</h1><pre class="source lang-java linenums">package earthquakes.entities;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+<span class="nc" id="L8">public class Location{</span>
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    private long placeId;
+    private String name;
+    private double latitude, longitude;
+
+<span class="nc" id="L17">    public Long getId() {return id;}</span>
+<span class="nc" id="L18">    public Long getPlaceId() {return placeId;}</span>
+
+<span class="nc" id="L20">    public String getName() {return name;}</span>
+    
+<span class="nc" id="L22">    public double getLatitude() {return latitude;}</span>
+<span class="nc" id="L23">    public double getLongitude() {return longitude;}</span>
+
+<span class="nc" id="L25">    public void setId(long id) {this.id = id;}</span>
+<span class="nc" id="L26">    public void setPlaceId(long placeId) {this.placeId = placeId;}</span>
+
+<span class="nc" id="L28">    public void setName(String name) {this.name = name;}</span>
+
+<span class="nc" id="L30">    public void setLatitude(double latitude) {this.latitude = latitude;}</span>
+<span class="nc" id="L31">    public void setLongitude(double longitude) {this.longitude = longitude;}</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

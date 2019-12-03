@@ -37,7 +37,6 @@
           <th>Type</th>
           <th>Get Earthquakes</th>
           <th>Add to favorites</th>
-          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -56,11 +55,6 @@
               <input type="hidden" name="longitude" th:value="${p.lon}" value=""/>
               <input type="submit" class="btn btn-primary" value="Add" />
             </form>
-          </td>
-          <td>
-            <form th:method="delete"  th:object="${locations}" th:action="@{/locations/delete/} + ${id}">
-              <input type="submit" class="btn btn-danger" value="Delete" />
-         </form>
           </td>
         </tr>
       </tbody>
