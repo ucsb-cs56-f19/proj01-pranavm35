@@ -95,4 +95,12 @@ public class HomePageTest {
                 .andExpect(xpath("/html/body/div/nav/a").exists())
                 .andExpect(xpath("//*[@id='navbarTogglerDemo03']/ul[1]/li[3]/a").string("Users"));
     }
+
+    @Test
+    public void getHomePage_hasCorrectLinkFavorites() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
+                .andExpect(status().isOk())
+                .andExpect(xpath("/html/body/div/nav/a").exists())
+                .andExpect(xpath("//*[@id='navbarTogglerDemo03']/ul[1]/li[4]/a").string("Favorites"));
+    }
 }
