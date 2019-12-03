@@ -1,28 +1,33 @@
 package earthquakes.controllers;
 
-import earthquakes.osm.Place;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
-import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import java.util.Map;
-import java.util.HashMap;
-import earthquakes.services.EarthquakeQueryService;
-import earthquakes.services.LocationQueryService;
-import earthquakes.searches.LocSearch;
 
-import com.nimbusds.oauth2.sdk.client.ClientReadRequest;
+import earthquakes.entities.Location;
+import earthquakes.osm.Place;
+import earthquakes.repositories.LocationRepository;
+import earthquakes.searches.LocSearch;
+import earthquakes.services.LocationQueryService;
 
 @Controller
 public class LocationsController {
 
     @Autowired
     private ClientRegistrationRepository clientRegistrationRepository;
+
+    private LocationRepository locationRepository;
+
+    @Autowired
+    public LocationsController(LocationRepository lr){
+        System.out.println("ran locations controller");
+        this.locationRepository = lr;
+    }
 
     @GetMapping("/locations/search")
     public String getLocationsSearch(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken,
@@ -40,5 +45,12 @@ public class LocationsController {
         List<Place> place = Place.listFromJson(json);
         model.addAttribute("place",place);
         return "locations/results";
+    }
+
+    @GetMapping("/locations")
+    public String index(Model model) {
+        Iterable<Location> locations = locationRepository.findAll();
+        model.addAttribute("locations", locations);
+        return "locations/index";
     }
 }

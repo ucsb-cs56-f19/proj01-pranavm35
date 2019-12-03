@@ -15,6 +15,7 @@ public class UsersController {
 
     @Autowired
     public UsersController(UserRepository userRepository) {
+        System.out.println("ran users controller");
         this.userRepository = userRepository;   
     }
     
