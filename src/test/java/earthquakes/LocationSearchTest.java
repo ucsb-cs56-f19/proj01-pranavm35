@@ -21,7 +21,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import earthquakes.controllers.LocationsController;
 import earthquakes.repositories.LocationRepository;
 
-
 @RunWith(SpringRunner.class)
 @WebMvcTest(LocationsController.class)
 public class LocationSearchTest {
