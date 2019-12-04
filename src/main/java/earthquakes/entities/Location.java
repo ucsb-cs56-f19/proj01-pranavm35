@@ -6,15 +6,18 @@ import javax.persistence.Id;
 
 @Entity
 public class Location{
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private long placeId;
+    private String uid;
     private String name;
     private double latitude, longitude;
 
     public Long getId() {return id;}
+    public String getUid() {return uid;}
     public Long getPlaceId() {return placeId;}
 
     public String getName() {return name;}
@@ -23,6 +26,7 @@ public class Location{
     public double getLongitude() {return longitude;}
 
     public void setId(long id) {this.id = id;}
+    public void setUid(String uid) {this.uid = uid;}
     public void setPlaceId(long placeId) {this.placeId = placeId;}
 
     public void setName(String name) {this.name = name;}
