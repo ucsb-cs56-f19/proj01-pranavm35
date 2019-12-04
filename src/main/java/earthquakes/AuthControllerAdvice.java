@@ -7,7 +7,9 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 import earthquakes.repositories.UserRepository;
+import earthquakes.repositories.LocationRepository;
 import earthquakes.entities.AppUser;
+import earthquakes.entities.Location;
 import java.util.List;
 import earthquakes.services.MembershipService;
 
@@ -19,6 +21,9 @@ public class AuthControllerAdvice {
 
     @Autowired   
     private UserRepository userRepository;
+
+    @Autowired
+    private LocationRepository locationRepository;
 
     @ModelAttribute("isLoggedIn")
     public boolean getIsLoggedIn(OAuth2AuthenticationToken token){
