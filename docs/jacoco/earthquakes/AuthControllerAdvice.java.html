@@ -7,12 +7,14 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 import earthquakes.repositories.UserRepository;
+import earthquakes.repositories.LocationRepository;
 import earthquakes.entities.AppUser;
+import earthquakes.entities.Location;
 import java.util.List;
 import earthquakes.services.MembershipService;
 
 @ControllerAdvice
-<span class="nc" id="L15">public class AuthControllerAdvice {</span>
+<span class="nc" id="L17">public class AuthControllerAdvice {</span>
 
     @Autowired   
     private MembershipService membershipService;
@@ -20,51 +22,54 @@ import earthquakes.services.MembershipService;
     @Autowired   
     private UserRepository userRepository;
 
+    @Autowired
+    private LocationRepository locationRepository;
+
     @ModelAttribute(&quot;isLoggedIn&quot;)
     public boolean getIsLoggedIn(OAuth2AuthenticationToken token){
-<span class="nc bnc" id="L25" title="All 2 branches missed.">        return token != null;</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        return token != null;</span>
     }
 
     @ModelAttribute(&quot;id&quot;)
     public String getUid(OAuth2AuthenticationToken token){
-<span class="nc bnc" id="L30" title="All 2 branches missed.">        if (token == null) return &quot;&quot;;</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        if (token == null) return &quot;&quot;;</span>
 
-<span class="nc" id="L32">        String uid = token.getPrincipal().getAttributes().get(&quot;id&quot;).toString();</span>
+<span class="nc" id="L37">        String uid = token.getPrincipal().getAttributes().get(&quot;id&quot;).toString();</span>
 
-<span class="nc" id="L34">        List&lt;AppUser&gt; users = userRepository.findByUid(uid);</span>
+<span class="nc" id="L39">        List&lt;AppUser&gt; users = userRepository.findByUid(uid);</span>
 
-<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (users.size()==0) {</span>
-<span class="nc" id="L37">            AppUser u = new AppUser();</span>
-<span class="nc" id="L38">            u.setUid(uid);</span>
-<span class="nc" id="L39">            u.setLogin(token2login(token));</span>
-<span class="nc" id="L40">            userRepository.save(u);</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">        if (users.size()==0) {</span>
+<span class="nc" id="L42">            AppUser u = new AppUser();</span>
+<span class="nc" id="L43">            u.setUid(uid);</span>
+<span class="nc" id="L44">            u.setLogin(token2login(token));</span>
+<span class="nc" id="L45">            userRepository.save(u);</span>
         }
 
-<span class="nc" id="L43">        return uid;</span>
+<span class="nc" id="L48">        return uid;</span>
     }
 
     @ModelAttribute(&quot;login&quot;)
     public String getLogin(OAuth2AuthenticationToken token){
-<span class="nc bnc" id="L48" title="All 2 branches missed.">        if (token == null) return &quot;&quot;;</span>
-<span class="nc" id="L49">        return token2login(token);</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">        if (token == null) return &quot;&quot;;</span>
+<span class="nc" id="L54">        return token2login(token);</span>
     }
 
     @ModelAttribute(&quot;isMember&quot;)
     public boolean getIsMember(OAuth2AuthenticationToken token){
-<span class="nc" id="L54">        return membershipService.isMember(token);</span>
+<span class="nc" id="L59">        return membershipService.isMember(token);</span>
     }
     @ModelAttribute(&quot;isAdmin&quot;)
     public boolean getIsAdmin(OAuth2AuthenticationToken token){
-<span class="nc" id="L58">        return membershipService.isAdmin(token);</span>
+<span class="nc" id="L63">        return membershipService.isAdmin(token);</span>
     }
 
     @ModelAttribute(&quot;role&quot;)
     public String getRole(OAuth2AuthenticationToken token){
-<span class="nc" id="L63">        return membershipService.role(token);</span>
+<span class="nc" id="L68">        return membershipService.role(token);</span>
     }
 
     private String token2login(OAuth2AuthenticationToken token) {
-<span class="nc" id="L67">        return token.getPrincipal().getAttributes().get(&quot;login&quot;).toString();</span>
+<span class="nc" id="L72">        return token.getPrincipal().getAttributes().get(&quot;login&quot;).toString();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

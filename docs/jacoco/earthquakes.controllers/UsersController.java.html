@@ -15,15 +15,14 @@ public class UsersController {
 
     @Autowired
 <span class="nc" id="L17">    public UsersController(UserRepository userRepository) {</span>
-<span class="nc" id="L18">        System.out.println(&quot;ran users controller&quot;);</span>
-<span class="nc" id="L19">        this.userRepository = userRepository;   </span>
-<span class="nc" id="L20">    }</span>
+<span class="nc" id="L18">        this.userRepository = userRepository;   </span>
+<span class="nc" id="L19">    }</span>
     
     @GetMapping(&quot;/users&quot;)
     public String index(Model model) {
-<span class="nc" id="L24">        Iterable&lt;AppUser&gt; users= userRepository.findAll();</span>
-<span class="nc" id="L25">        model.addAttribute(&quot;users&quot;, users);</span>
-<span class="nc" id="L26">        return &quot;users/index&quot;;</span>
+<span class="nc" id="L23">        Iterable&lt;AppUser&gt; users= userRepository.findAll();</span>
+<span class="nc" id="L24">        model.addAttribute(&quot;users&quot;, users);</span>
+<span class="nc" id="L25">        return &quot;users/index&quot;;</span>
     }
 
 }
